@@ -145,3 +145,7 @@
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
+
+#hero a{
+    @apply decoration-dashed underline font-medium break-words
+}
