@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
@@ -15,10 +16,7 @@ export interface Props {
 
 const { post, posts } = Astro.props;
 
-const {
-  title,
-  pubDatetime,
-} = post.data;
+const { title, pubDatetime, tags } = post.data;
 
 const { Content } = await post.render();
 
@@ -64,15 +62,23 @@ const nextPost =
     </button>
   </div>
   <main id="main-content">
-    <h1 transition:name={slugifyStr(title)} class="post-title inline-block">{title}</h1>
-    <Datetime
-      pubDatetime={pubDatetime}
-      size="lg"
-      className="my-2"
-    />
+    <h1 transition:name={slugifyStr(title)} class="post-title inline-block">
+      {title}
+    </h1>
+    <Datetime pubDatetime={pubDatetime} size="lg" className="my-2" />
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
+
+    {
+      tags && tags.length > 0 && (
+        <ul class="my-8">
+          {tags.map(tag => (
+            <Tag tag={slugifyStr(tag)} />
+          ))}
+        </ul>
+      )
+    }
 
     <div
       class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"

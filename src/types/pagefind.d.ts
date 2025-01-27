@@ -1,4 +1,4 @@
-declare module '@pagefind/default-ui' {
+declare module "@pagefind/default-ui" {
   export class PagefindUI {
     constructor(options: {
       element: HTMLElement | null;
@@ -16,4 +16,4 @@ declare module '@pagefind/default-ui' {
       };
     });
   }
-} 
+}
