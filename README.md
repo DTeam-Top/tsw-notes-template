@@ -1,6 +1,10 @@
 # TSW Notes Template
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDTeam-Top%2Ftsw-notes-template)
+
 A simple Astro blog template for [TSW Web Extension](https://chromewebstore.google.com/detail/tsw-tiny-smart-worker/jggejkapgggcnogkbamipkihkbbeelnb) users to export their notes to a blog.
+
+Demo: [TSW Notes](https://notes-theta-gules.vercel.app/)
 
 ## Tech Stack
 
